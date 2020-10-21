@@ -34,12 +34,12 @@ public class Rectangle {
 
 //3й: метод
     void PrintRectangleKind() {
-        if (x == y) {
+        if (x < 0 || y < 0) {
+            System.out.println("Ошибка данных, введено отрицательно число");
+        } else if (x == y) {
             System.out.println("Это квадрат");
         } else if (x != y) {
             System.out.println("Это прямоугольник");
-        } else if (x<0 | y<0) {
-            System.out.println("Ошибка данных, введено отрицательно число");
         }
     }
 

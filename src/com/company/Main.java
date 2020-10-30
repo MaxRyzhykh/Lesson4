@@ -28,5 +28,9 @@ public class Main {
 	rectangle_3.PrintArea();
 	rectangle_3.PrintRectangleKind();
 	System.out.println(rectangle_3.IsTheSameRectangle(rectangle_3));
+
+	Rectangle.printRectanglesCount();
+
+	Rectangle.printClassName(false);
     }
 }

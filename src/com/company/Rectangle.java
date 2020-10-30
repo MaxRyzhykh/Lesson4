@@ -5,34 +5,39 @@ import java.awt.geom.Area;
 public class Rectangle {
     double x;
     double y;
+    static private int createdRectangles = 0;
 
-//1й: конструктор
+
     Rectangle (double sx, double sy) {
         x = sx;
         y = sy;
+        createdRectangles++;
     }
 
-//2й: конструктор вадрата
+
     Rectangle (double syx) {
         x = syx;
         y = syx;
+        createdRectangles++;
     }
 
-//1й: метод
-     String CalculateArea() {
+
+   /*  String CalculateArea() {
         String Area = String.valueOf((x*y));
 
         return Area;
+    } */
+    Double CalculateArea() {
+        return x * y;
     }
 
-//2й: метод
     void PrintArea() {
-        String StringArea = CalculateArea();
+        String StringArea = Double.toString(CalculateArea());
 
         System.out.println("S = " + StringArea);
     }
 
-//3й: метод
+
     void PrintRectangleKind() {
         if (x < 0 || y < 0) {
             System.out.println("Ошибка данных, введено отрицательно число");
@@ -43,11 +48,29 @@ public class Rectangle {
         }
     }
 
-//4й: метод
+
     boolean IsTheSameRectangle(Rectangle rectangle) {
         return x == rectangle.x &&
                 y == rectangle.y ||
                x == rectangle.y &&
                 y == rectangle.x;
     }
+
+
+    static void printRectanglesCount() {
+        System.out.println("Всего было создано " + createdRectangles + " прямоугольников");
+    }
+
+
+    private final static  String RUSSIAN_CLASS_NAME = "Прямоугольник";
+    private final static String ENGLISH_CLASS_NAME = "Rectangle";
+
+    static void printClassName(boolean printInRussian) {
+        if (printInRussian) {
+            System.out.println(RUSSIAN_CLASS_NAME);
+        } else {
+            System.out.println(ENGLISH_CLASS_NAME);
+        }
+    }
+
 }

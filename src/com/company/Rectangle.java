@@ -3,9 +3,10 @@ package com.company;
 import java.awt.geom.Area;
 
 public class Rectangle {
+    static private int createdRectangles = 0;
     double x;
     double y;
-    static private int createdRectangles = 0;
+
 
 
     Rectangle (double sx, double sy) {
